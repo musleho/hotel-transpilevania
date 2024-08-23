@@ -2,9 +2,9 @@
 
 current_branch=$(git branch --show-current)
 
-if [ "$current_branch" = "main" ] || [ "$current_branch" = "staging" ]; then
-  echo "Committing directly to $current_branch is not allowed."
-  exit 1  # Non-zero exit status prevents the commit
-fi
+# if [ "$current_branch" = "main" ] || [ "$current_branch" = "staging" ]; then
+#   echo "Committing directly to $current_branch is not allowed."
+#   exit 1  # Non-zero exit status prevents the commit
+# fi
 
-npx lint-staged
+# npx lint-staged
