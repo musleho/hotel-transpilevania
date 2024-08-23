@@ -1,3 +1,60 @@
 {
-  "extends": "next/core-web-vitals"
+    "env": {
+        "node": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "airbnb",
+        "eslint:recommended",
+        "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "plugins": ["react", "@typescript-eslint", "import", "prettier"],
+    "rules": {
+        "no-console": 0,
+        "no-debugger": 0,
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [".tsx"]
+            }
+        ],
+        "react/function-component-definition": 0,
+        "react/prop-types": 0,
+        "import/extensions": [
+            "error",
+            "never",
+            {
+                "css": "always"
+            }
+        ],
+        "no-undef": "off",
+        "no-unused-vars": "warn",
+        "@typescript-eslint/no-unused-vars": "warn",
+        "react/jsx-props-no-spreading": "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": ["src"],
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        },
+        "react": {
+            "version": "detect"
+        },
+        "prettier/prettier": {
+            "endOfLine": "auto"
+        }
+    }
 }
