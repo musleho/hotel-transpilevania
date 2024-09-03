@@ -32,7 +32,7 @@ const getRoomWithNumber = async (
     if (!roomNumber) {
         return false;
     }
-    const client = ctx.getClient({ apiVersion: '2021-10-21' });
+    const client = ctx.getClient({ apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION as string });
     const rooms = await client.fetch(
         `*[_type == 'room' && roomNumber == $roomNumber]`,
         { roomNumber },

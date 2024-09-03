@@ -6,6 +6,12 @@ const booking = {
     type: 'document',
     fields: [
         defineField({
+            name: 'name',
+            title: 'Name',
+            type: 'string',
+            validation: Rule => Rule.required(),
+        }),
+        defineField({
             name: 'user',
             title: 'User',
             type: 'reference',

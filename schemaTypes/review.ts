@@ -35,6 +35,13 @@ const review = {
                     .max(5)
                     .error('Rating must be between 1 and 5'),
         }),
+        defineField({
+            name: 'booking',
+            title: 'Booking',
+            type: 'reference',
+            to: [{ type: 'booking' }],
+            validation: (Rule) => Rule.required(),
+        }),
     ],
 };
 

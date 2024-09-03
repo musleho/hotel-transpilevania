@@ -10,6 +10,18 @@ const FeaturedRoom: React.FC<FeaturedRoomProps> = ({ room }) => {
     const { name, price, description, discount, coverImage, images, slug } =
         room;
 
+    const fPrice = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits:0,
+        maximumFractionDigits: 0,
+    }).format(price);
+
+    const fDiscount = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    }).format(discount);
+
     return (
         <section className='flex md:flex-row flex-col py-10 items-center justify-evenly gap12 container mx-auto'>
             <div className='md:grid gap-8 grid-cols-1'>
@@ -48,7 +60,7 @@ const FeaturedRoom: React.FC<FeaturedRoomProps> = ({ room }) => {
                                 Starting From
                             </p>
                             <p className='md:font-bold flex font-medium text-lg xl:text-5xl'>
-                                ${price} <span className='text-xs font-normal'>&nbsp;per night</span>
+                                {fPrice} <span className='text-xs font-normal'>&nbsp;per night</span>
                             </p>
                         </div>
                         <div className='flex gap-3 flex-col items-center justify-center mr-4'>
@@ -56,7 +68,7 @@ const FeaturedRoom: React.FC<FeaturedRoomProps> = ({ room }) => {
                                 Discount:
                             </p>
                             <p className='md:font-bold flex font-medium text-lg xl:text-5xl'>
-                                ${discount}
+                                {discount === 0 ? '$0' : fDiscount}
                             </p>
                         </div>
                     </div>

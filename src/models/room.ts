@@ -25,6 +25,7 @@ type Dimensions = {
 
 export type Room = {
     _id: string;
+    roomNumber: number;
     description: string;
     dimensions: Dimensions;
     discount: number;
@@ -37,6 +38,19 @@ export type Room = {
     numBeds: number;
     offeredAmenities: Amenity[];
     slug: Slug;
-    specialNotes: string;
+    specialNote: string;
     type: string;
 }
+
+export type CreateBookingDTO = {
+    user: string;
+    room: string;
+    name: string;
+    checkInDate: Date;
+    checkOutDate: Date;
+    numDays: number;
+    numAdults: number;
+    numChildren: number;
+    totalPrice: number;
+    discount: number;
+};

@@ -1,8 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['lh3.googleusercontent.com', 'images.unsplash.com', 'static.wikia.nocookie.net'],
-    }
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'lh3.googleusercontent.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'images.unsplash.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'static.wikia.nocookie.net',
+            },
+        ],
+    },
 };
 
 // eslint-disable-next-line no-undef
