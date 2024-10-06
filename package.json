@@ -13,6 +13,7 @@
     "@stripe/stripe-js": "^4.4.0",
     "axios": "^1.7.7",
     "date-fns": "^3.6.0",
+    "hotel-transpilvania": "file:",
     "next": "^14.2.7",
     "next-auth": "^4.24.7",
     "next-auth-sanity": "^1.5.3",

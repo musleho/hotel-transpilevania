@@ -4,8 +4,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 interface SearchProps {
-    roomTypeFilter: string;
-    searchQuery: string;
+    roomTypeFilter?: string;
+    searchQuery?: string;
 }
 
 const Search: React.FC<SearchProps> = ({
